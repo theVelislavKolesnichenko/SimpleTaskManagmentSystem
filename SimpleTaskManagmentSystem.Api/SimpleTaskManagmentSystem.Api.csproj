@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helpers\**" />
+    <Compile Remove="Models\**" />
+    <Compile Remove="Services\**" />
+    <Content Remove="Helpers\**" />
+    <Content Remove="Models\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Helpers\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Helpers\**" />
+    <None Remove="Models\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.5" />
+    <PackageReference Include="Npgsql" Version="4.1.3.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.7.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleTaskManagmentSystem.Application\SimpleTaskManagmentSystem.Application.csproj" />
+    <ProjectReference Include="..\SimpleTaskManagmentSystem.Domain\SimpleTaskManagmentSystem.Domain.csproj" />
+    <ProjectReference Include="..\SimpleTaskManagmentSystem.Infrastructure\SimpleTaskManagmentSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>

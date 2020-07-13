@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
+    <Page Remove="Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.1.1" />
+    <PackageReference Include="MahApps.Metro.IconPacks.FeatherIcons" Version="4.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Syncfusion.SfKanban.WPF" Version="18.2.0.44" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleTaskManagmentSystem.Application\SimpleTaskManagmentSystem.Application.csproj" />
+    <ProjectReference Include="..\SimpleTaskManagmentSystem.Domain\SimpleTaskManagmentSystem.Domain.csproj" />
+    <ProjectReference Include="..\SimpleTaskManagmentSystem.Infrastructure\SimpleTaskManagmentSystem.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

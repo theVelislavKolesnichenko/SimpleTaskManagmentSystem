@@ -1,0 +1,23 @@
+﻿<Window x:Class="SimpleTaskManagmentSystem.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:SimpleTaskManagmentSystem.Wpf.Views"
+        mc:Ignorable="d" 
+        Title="Welcome" Height="400" Width="400"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    
+    <StackPanel Orientation="Vertical" Margin="32" VerticalAlignment="Center">
+        <Label Content="Login" HorizontalAlignment="Center" FontSize="24" Margin="24" FontWeight="Bold" />
+        <TextBox Name="usernameBox"
+                 Margin="0 10 0 10" mah:TextBoxHelper.Watermark="Username" mah:TextBoxHelper.UseFloatingWatermark="True" />
+        <PasswordBox Name="passwordBox"
+                 Margin="0 0 0 10" mah:TextBoxHelper.Watermark="Password" mah:TextBoxHelper.UseFloatingWatermark="True" />
+        <Button Content="Sig in"
+                HorizontalAlignment="Center"
+                Width="100" Click="Button_Click" />
+    </StackPanel>
+    
+</Window>

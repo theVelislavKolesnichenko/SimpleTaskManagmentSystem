@@ -1,0 +1,9 @@
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\bin\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.deps.json
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\bin\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.dll
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\bin\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.pdb
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\obj\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.AssemblyInfoInputs.cache
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\obj\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.AssemblyInfo.cs
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\obj\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.csproj.CoreCompileInputs.cache
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\obj\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.dll
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\obj\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.pdb
+F:\DevRepository\SimpleTaskManagmentSystem\SimpleTaskManagmentSystem.Domain\obj\Debug\netstandard2.0\SimpleTaskManagmentSystem.Domain.csprojAssemblyReference.cache
