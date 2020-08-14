@@ -20,9 +20,7 @@
 
         public async override void Execute(object parameter)
         {
-            string search = parameter.ToString();
-
-            var comments = await commentService.GetComments(search);
+            var comments = await commentService.GetComments(BordViewModel.SearchComment);
 
             BordViewModel.FilteredComments = new ObservableCollection<Comment>(comments);
         }

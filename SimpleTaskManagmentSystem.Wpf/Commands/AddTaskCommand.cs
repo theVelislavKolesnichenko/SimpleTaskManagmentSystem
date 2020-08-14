@@ -18,7 +18,7 @@ namespace SimpleTaskManagmentSystem.Wpf.Commands
         public override void Execute(object parameter)
         {
             borderViewModel.SelectedTask = new TaskViewModel();
-            borderViewModel.TaskViewWidth = 250;
+            borderViewModel.TaskViewWidth = 350;
 
         }
     }

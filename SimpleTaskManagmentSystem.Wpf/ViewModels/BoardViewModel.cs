@@ -51,7 +51,19 @@
         public ObservableCollection<Type> TaskTypes { get; set; } 
         public ObservableCollection<CommentType> CommentTypes { get; set; }
 
-        public ObservableCollection<TaskViewModel> Tasks { get; set; } = new ObservableCollection<TaskViewModel>();
+        public ObservableCollection<TaskViewModel> tasks;
+        public ObservableCollection<TaskViewModel> Tasks 
+        { 
+            get 
+            { 
+                return tasks; 
+            } 
+            set 
+            { 
+                tasks = value; 
+                OnPropertyChanged();
+            } 
+        }
 
         public ICommand AddCommentCommand { get; }
 

@@ -18,7 +18,7 @@
             //click ot card
             var viewModel = (BoardViewModel)DataContext;
             viewModel.SelectedTask = (TaskViewModel)e.SelectedCard.Content;
-            viewModel.TaskViewWidth = 250;
+            viewModel.TaskViewWidth = 350;
         }
         private void SfKanban_CardDragEnd(object sender, KanbanDragEndEventArgs e)
         {

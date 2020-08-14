@@ -5,5 +5,7 @@
     public interface ITaskRepository
     {
         public IEnumerable<Task> GetTasks();
+        public int Insert(Task task);
+        public bool Update(Task task);
     }
 }

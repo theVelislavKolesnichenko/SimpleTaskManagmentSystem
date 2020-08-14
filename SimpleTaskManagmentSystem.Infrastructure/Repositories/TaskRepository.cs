@@ -7,6 +7,8 @@
     using Domain.Models.Tasks;
     using System.Collections.Generic;
     using System.Data;
+    using System;
+    using Type = Domain.Models.Tasks.Type;
 
     public class TaskRepository : ITaskRepository
     {
@@ -54,6 +56,75 @@
             }
 
             return tasks;
+        }
+
+        public int Insert(Task task)
+        {
+            var con = new NpgsqlConnection(appSettings.ConnectionString);
+
+            try
+            {
+                con.Open();
+                using (var cmd = new NpgsqlCommand(@"public.""Insert_Tasks""", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("createdDate", task.CreatedDate);
+                    cmd.Parameters.AddWithValue("requiredByDate", task.RequiredByDate);
+                    cmd.Parameters.AddWithValue("description", task.Description);
+                    cmd.Parameters.AddWithValue("status", task.Status);
+                    cmd.Parameters.AddWithValue("type", task.Type);
+
+                    using (var rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                        {
+                            return rdr.GetInt32(0);
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return 0;
+        }
+
+        public bool Update(Task task)
+        {
+            var con = new NpgsqlConnection(appSettings.ConnectionString);
+
+            try
+            {
+                con.Open();
+                using (var cmd = new NpgsqlCommand(@"public.""Update_Tasks""", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("createdDate", task.CreatedDate);
+                    cmd.Parameters.AddWithValue("requiredByDate", task.RequiredByDate);
+                    cmd.Parameters.AddWithValue("description", task.Description);
+                    cmd.Parameters.AddWithValue("status", task.Status);
+                    cmd.Parameters.AddWithValue("type", task.Type);
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            return false;
         }
     }
 }

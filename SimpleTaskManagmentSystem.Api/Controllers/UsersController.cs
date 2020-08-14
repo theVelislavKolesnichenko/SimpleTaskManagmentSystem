@@ -4,6 +4,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Application.Contracts.Repositories;
     using Application.Features;
+
     [Authorize]
     [ApiController]
     [Route("[controller]")]

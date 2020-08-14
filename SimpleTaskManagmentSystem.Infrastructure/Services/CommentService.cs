@@ -16,7 +16,7 @@
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync("comments/get?searchText=" + searchText);
+                HttpResponseMessage response = await client.GetAsync("comment/get?searchText=" + searchText);
                 if (response.IsSuccessStatusCode)
                 {
                     comments = await response.Content.ReadAsAsync<IEnumerable<Comment>>();

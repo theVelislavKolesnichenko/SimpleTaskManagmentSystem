@@ -52,8 +52,10 @@ namespace SimpleTaskManagmentSystem.Api
             });
 
             // configure DI for application services
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<ITaskRepository, TaskRepository>();
+            services
+                .AddScoped<IUserRepository, UserRepository>()
+                .AddScoped<ITaskRepository, TaskRepository>()
+                .AddScoped<ICommentRepository, CommentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

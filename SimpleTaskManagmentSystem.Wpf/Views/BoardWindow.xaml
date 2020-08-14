@@ -12,10 +12,11 @@
         mc:Ignorable="d"
         Title="BoardWindow" Height="450" Width="2400" WindowState="Maximized" ResizeMode="CanMinimize">
     <DockPanel>
+        <!--Width="350"-->
         <Border DockPanel.Dock="Left"
                 BorderThickness="0 1 1 0"
                 BorderBrush="DarkGray"
-                Width="350">
+                Width="{Binding TaskViewWidth}">
             <DockPanel>
                 <Border DockPanel.Dock="Bottom"
                         BorderThickness="1"
@@ -68,12 +69,12 @@
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel Orientation="Vertical">
                         <StackPanel Margin="10">
-                            <TextBox Text="{Binding SelectedTask.Summary, UpdateSourceTrigger=PropertyChanged}"
+                            <!--<TextBox Text="{Binding SelectedTask.Summary, UpdateSourceTrigger=PropertyChanged}"
                                      mah:TextBoxHelper.Watermark="Summary"
                                      mah:TextBoxHelper.UseFloatingWatermark="True"
                                      FontWeight="Bold"
                                      FontSize="16"
-                                     Margin="0 0 0 10" />
+                                     Margin="0 0 0 10" />-->
                             <ComboBox ItemsSource="{Binding TaskTypes}"
                                       SelectedValue="{Binding SelectedTask.Type}"
                                       DisplayMemberPath="Name"
@@ -155,14 +156,14 @@
                                  CardTapped="SfKanban_OnCardTapped"
                                  CardDragEnd="SfKanban_CardDragEnd"
                                  
-                                 ItemsSource="{Binding Tasks}">
+                                 ItemsSource="{Binding Tasks, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
                 <syncfusion:SfKanban.ColumnHeaderTemplate>
                     <DataTemplate DataType="syncfusion:ColumnTag">
                         <Border>
                             <StackPanel Orientation="Vertical"
                                         Margin="0 10 0 0">
                                 <DockPanel>
-                                    <!--<Button DockPanel.Dock="Right"
+                                    <Button DockPanel.Dock="Right"
                                             Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type syncfusion:SfKanban}}, Path=DataContext.AddTaskCommand}"
                                             CommandParameter="{Binding Header}">
                                         <Button.ContentTemplate>
@@ -172,7 +173,7 @@
                                                 </StackPanel>
                                             </DataTemplate>
                                         </Button.ContentTemplate>
-                                    </Button>-->
+                                    </Button>
                                     <TextBlock Text="{Binding Header}"
                                                FontSize="20" />
                                 </DockPanel>
@@ -191,7 +192,7 @@
                                 Background="White"
                                 Margin="0,5,0,5">
                             <StackPanel Margin="10,5,5,10">
-                                <TextBox Text="{Binding Title}"
+                                <TextBox Text="{Binding Type}"
                                          TextWrapping="Wrap"
                                          MaxLines="2"
                                          BorderThickness="0"
@@ -221,19 +222,22 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBox
+                    <TextBlock Text="Search for Comments:" FontSize="16" TextAlignment="Center" ></TextBlock>
+                    <TextBox Grid.Row="1"
                         Text="{Binding SearchComment, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                         TextWrapping="Wrap"
-                        mah:TextBoxHelper.Watermark="Search Comment">
+                        mah:TextBoxHelper.Watermark="Enter search text and press Enter"
+                        mah:TextBoxHelper.UseFloatingWatermark="True">
                         <TextBox.InputBindings>
                             <KeyBinding
                                 Command="{Binding SearchCommentCommand}"
                                 Key="Enter" />
                         </TextBox.InputBindings>
                     </TextBox>
-                    <ListBox Grid.Row="1"  ItemsSource="{Binding FilteredItems}">
+                    <ListBox Grid.Row="2"  ItemsSource="{Binding FilteredItems}">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Content}"></TextBlock>
